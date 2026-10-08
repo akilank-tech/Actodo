@@ -7,7 +7,7 @@ const Landing = () => {
     const data = useLocation()
     return (
         
-        <div className='bg-black p-16'>
+        <div className='bg-black p-16 w-full h-screen'>
       <div className='bg-[#EFEFEF] p-10 border rounded-md'>
         <Header name={data.state.user} />
         <div className="flex justify-between my-5 flex-wrap gap-10">

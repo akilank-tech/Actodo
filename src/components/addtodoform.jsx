@@ -8,16 +8,20 @@ const AddTodoform=(props)=>{
         setnewarr(evt.target.value)
     }
     const handleadd=()=>{
+        if(newarr.trim()===""){
+            return
+        }
         setActivityArr([...activityArr,{
             id:activityArr.length+1,activity:newarr
         }])
         setnewarr("")
+
     }
     return(
          <div className="flex flex-col gap-3">
                 <h1 className="text-2xl font-medium">Manage Activities</h1>
                 <div>
-                    <input value={newarr} onChange={handleChange} type="text" placeholder="Next Activity?" className="border border-black p-1 bg-transparent" />
+                    <input value={newarr} onChange={handleChange} type="text" required placeholder="Next Activity?" className="border border-black p-1 bg-transparent" />
                 <button onClick={handleadd} className="bg-black text-white p-1 border border-black cursor-pointer">Add</button>
                 </div>
             </div>
